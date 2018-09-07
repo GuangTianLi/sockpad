@@ -1,21 +1,21 @@
 {
-  "name": "firepad",
-  "description": "Collaborative text editing powered by Firebase",
+  "name": "sockpad",
+  "description": "Collaborative text editing powered by Socket.io",
   "version": "1.5.0",
-  "author": "Firebase (https://firebase.google.com/)",
+  "author": "GuangTian LI",
   "contributors": [
     "Michael Lehenbauer <michael@firebase.com>"
   ],
-  "homepage": "http://www.firepad.io/",
+  "homepage": "https://github.com/GuangTianLi/sockpad",
   "repository": {
     "type": "git",
-    "url": "https://github.com/firebase/firepad.git"
+    "url": "https://github.com/GuangTianLi/sockpad.git"
   },
   "browser": {
     "jsdom": false
   },
   "bugs": {
-    "url": "https://github.com/firebase/firepad/issues"
+    "url": "https://github.com/GuangTianLi/sockpad/issues"
   },
   "licenses": [
     {

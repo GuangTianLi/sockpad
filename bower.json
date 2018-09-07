@@ -6,10 +6,10 @@
     "Firebase (https://firebase.google.com/)",
     "Michael Lehenbauer <michael@firebase.com>"
   ],
-  "homepage": "http://www.firepad.io",
+  "homepage": "https://github.com/GuangTianLi/sockpad",
   "repository": {
     "type": "git",
-    "url": "https://github.com/firebase/firepad.git"
+    "url": "https://github.com/GuangTianLi/sockpad.git"
   },
   "license": "MIT",
   "keywords": [
