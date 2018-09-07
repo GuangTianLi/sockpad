@@ -1,7 +1,7 @@
 {
   "name": "sockpad",
   "description": "Collaborative text editing powered by Socket.io",
-  "version": "1.5.0",
+  "version": "1.5.1-rc.2",
   "author": "GuangTian LI",
   "contributors": [
     "Michael Lehenbauer <michael@firebase.com>"
@@ -27,7 +27,6 @@
     "text",
     "word",
     "editor",
-    "firebase",
     "realtime",
     "collaborative"
   ],
