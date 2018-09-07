@@ -25,9 +25,7 @@ module.exports = function(config) {
 
     files: [
       "../bower_components/codemirror/lib/codemirror.js",
-      "../bower_components/firebase/firebase.js",
       "./vendor/ace-1.2.5.js",
-
       "../lib/utils.js",
       "../lib/span.js",
       "../lib/text-op.js",
@@ -53,9 +51,7 @@ module.exports = function(config) {
       "../lib/parse-html.js",
       "../lib/serialize-html.js",
       "../lib/text-pieces-to-inserts.js",
-      "../lib/headless.js",
       "../lib/firepad.js",
-
       "specs/helpers.js",
       "specs/*.spec.js"
     ]

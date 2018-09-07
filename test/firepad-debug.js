@@ -28,5 +28,4 @@ load('../lib/line.js');
 load('../lib/parse-html.js');
 load('../lib/serialize-html.js');
 load('../lib/text-pieces-to-inserts.js');
-load('../lib/headless.js');
 load('../lib/firepad.js');
