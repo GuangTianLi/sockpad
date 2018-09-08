@@ -6,6 +6,52 @@
 - [x] firebase对象替换为socket.io对象
 - [x] 移除headless模式
 
+
+# 安装
+
+## npm
+
+```bash
+npm i sockpad
+```
+
+## CDN
+```HTML
+<head>
+  <!-- socket.io -->
+  <script src="https://cdn.bootcss.com/socket.io/2.1.1/socket.io.slim.dev.js"></script>
+
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"/>
+
+  <!-- Firepad -->
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.5.0/firepad.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sockpad@1.5.2/dist/firepad.min.js"></script>
+</head>
+```
+
+Then, you need to initialize the Firebase SDK and Firepad:
+
+```HTML
+<body onload="init()">
+  <div id="firepad"></div>
+  <script>
+    function init() {
+      // 初始化socket.io
+      var socket = io('http://localhost');
+
+      // Create CodeMirror (with lineWrapping on).
+      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
+
+      // Create Firepad (with rich text toolbar and shortcuts enabled).
+      var firepad = Firepad.fromCodeMirror(socket, codeMirror,
+          { richTextShortcuts: true, richTextToolbar: true, defaultText: 'Hello, World!' });
+    }
+  </script>
+</body>
+```
+
 # Firepad [![Build Status](https://travis-ci.org/firebase/firepad.svg?branch=master)](https://travis-ci.org/firebase/firepad) [![Coverage Status](https://img.shields.io/coveralls/firebase/firepad.svg?branch=master&style=flat)](https://coveralls.io/r/firebase/firepad) [![Version](https://badge.fury.io/gh/firebase%2Ffirepad.svg)](http://badge.fury.io/gh/firebase%2Ffirepad)
 
 [Firepad](http://www.firepad.io/) is an open-source, collaborative code and text editor. It is
@@ -40,53 +86,6 @@ Visit [firepad.io](http://demo.firepad.io/) to see a live demo of Firepad in ric
 
 [![a screenshot of demo.firepad.io including a picture of two cats and a discussion about fonts](screenshot.png)](http://demo.firepad.io/)
 
-
-## Downloading Firepad
-
-Firepad uses [Firebase](https://firebase.google.com) as a backend, so it requires no server-side
-code. It can be added to any web app by including a few JavaScript files:
-
-```HTML
-<head>
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-
-  <!-- CodeMirror -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"/>
-
-  <!-- Firepad -->
-  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.5.0/firepad.css" />
-  <script src="https://cdn.firebase.com/libs/firepad/1.5.0/firepad.min.js"></script>
-</head>
-```
-
-Then, you need to initialize the Firebase SDK and Firepad:
-
-```HTML
-<body onload="init()">
-  <div id="firepad"></div>
-  <script>
-    function init() {
-      // Initialize the Firebase SDK.
-      firebase.initializeApp({
-        apiKey: '<API_KEY>',
-        databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
-      });
-
-      // Get Firebase Database reference.
-      var firepadRef = firebase.database().ref();
-
-      // Create CodeMirror (with lineWrapping on).
-      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
-
-      // Create Firepad (with rich text toolbar and shortcuts enabled).
-      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-          { richTextShortcuts: true, richTextToolbar: true, defaultText: 'Hello, World!' });
-    }
-  </script>
-</body>
-```
 
 ## Documentation
 
